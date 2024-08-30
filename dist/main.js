@@ -1,22 +1,15 @@
 #! /usr/bin/env node
 import inquirer from "inquirer";
 import chalk from "chalk";
-// Computer will generate a random number.
-// User Input for guessing number.
-// Compare User input with Computer generate number.
-// floor turn decimal figures in round .. and random generate random number
-// Pin Code Generator
 console.log(chalk.magentaBright("------A T M------"));
-let genPin = Math.floor(Math.random() * 9090 + 1000); // random Pin generator.
+let genPin = Math.floor(Math.random() * 9090 + 1000);
 console.log(chalk.bgRed(`Your Pin Code :${chalk.bgBlue(genPin)}\n`));
 let cashBalance = 1500;
-// const pincode = 1;
 let pinAsking = await inquirer.prompt([
     {
         name: "pin",
         type: "number",
         message: chalk.blue("Enter Pin Number:"),
-        // default: ,
     },
 ]);
 if (pinAsking.pin === genPin) {
